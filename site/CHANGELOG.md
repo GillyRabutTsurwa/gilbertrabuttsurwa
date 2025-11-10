@@ -1,5 +1,23 @@
 # Changelog
 
+## <small>1.0.1 (2025-11-10)</small>
+
+* fix: Starting Over ([9709529](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/9709529))
+* Adding (Git) Ignore File ([4a10b7a](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/4a10b7a))
+* Adding App & Studio Projects ([a9c4e2e](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/a9c4e2e))
+* Attempting to Update Submodule URLs Directly From the File ([d66917f](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/d66917f))
+* Fixing a Mashup ([77ab4f3](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/77ab4f3))
+* Going With Submodule Structure for Modified Deployment Workflow ([6d7eee4](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/6d7eee4))
+* Let's See if this Will Work ([a3fb839](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/a3fb839))
+* Mashup Fixed ([2941def](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/2941def))
+* Moved GitHub Workflows Directory to Proper Location ([e4628c9](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/e4628c9))
+* Netlify is Back ([6c34db4](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/6c34db4))
+* New Project Structure ([cb227f2](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/cb227f2))
+* Submodule Setup Complete ([d14ecf6](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/d14ecf6))
+* Submodule Update ([bce5871](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/bce5871))
+* Submodule Update. We're Back Doing This ([58fe3a1](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/58fe3a1))
+* Fix: Had Wrong URL for Site Submodule ([65edcb8](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/65edcb8))
+
 ## <small>1.4.4 (2025-08-11)</small>
 
 * fix: Button Components Not Rendering Properly + Code Refactoring ([7664e58](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa__site/commit/7664e58))
