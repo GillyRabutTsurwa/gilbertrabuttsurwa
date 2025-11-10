@@ -7,8 +7,7 @@
         "dev": "npm-run-all --parallel dev:*",
         "dev:site": "npm run dev-https --workspace=site",
         "dev:studio": "npm run dev --workspace=content",
-        "release:site": "npm run release --workspace=site",
-        "release:studio": "npm run release --workspace=content"
+        "release": "release-it"
     },
     "repository": {
         "type": "git",

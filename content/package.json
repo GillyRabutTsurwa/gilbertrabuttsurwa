@@ -10,9 +10,7 @@
     "build": "sanity build",
     "predeploy": "npm run build",
     "deploy": "sanity deploy",
-    "deploy-graphql": "sanity graphql deploy",
-    "release": "release-it",
-    "release-minour": "release-it minor"
+    "deploy-graphql": "sanity graphql deploy"
   },
   "keywords": [
     "sanity"

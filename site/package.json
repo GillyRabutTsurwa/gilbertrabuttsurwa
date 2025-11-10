@@ -16,9 +16,7 @@
         "preview": "nuxt preview",
         "postinstall": "nuxt prepare",
         "storybook": "storybook dev -p 6006",
-        "build-storybook": "storybook build",
-        "release": "release-it",
-        "release-minour": "release-it minor"
+        "build-storybook": "storybook build"
     },
     "devDependencies": {
         "@chromatic-com/storybook": "^4.1.0",
