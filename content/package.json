@@ -36,6 +36,7 @@
     "dotenv-cli": "^8.0.0",
     "eslint": "^9.19.0",
     "prettier": "^3.4.2",
+    "release-it": "^19.0.6",
     "typescript": "^5.7.3"
   },
   "prettier": {
@@ -43,5 +44,34 @@
     "singleQuote": false,
     "printWidth": 300,
     "bracketSpacing": true
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release v${version}"
+    },
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "publish": false
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "infile": "CHANGELOG.md",
+        "preset": {
+          "name": "conventionalcommits",
+          "types": [
+            {
+              "type": "feat",
+              "section": "Features (Studio)"
+            },
+            {
+              "type": "fix",
+              "section": "Bug Fixes (Studio)"
+            }
+          ]
+        }
+      }
+    }
   }
 }
