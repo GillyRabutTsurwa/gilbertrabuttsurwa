@@ -1,6 +1,6 @@
 {
     "name": "app",
-    "version": "1.4.4",
+    "version": "1.0.0",
     "description": "Coming Soon",
     "main": "nuxt.config.ts",
     "private": true,
@@ -76,11 +76,11 @@
                     "types": [
                         {
                             "type": "feat",
-                            "section": "Features"
+                            "section": "Features (Site)"
                         },
                         {
                             "type": "fix",
-                            "section": "Bug Fixes"
+                            "section": "Bug Fixes (Site)"
                         }
                     ]
                 }
