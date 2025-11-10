@@ -1,0 +1,46 @@
+# This workflow will send an e-mail (better description coming soon)
+
+name: Making Issues From Todos
+
+on:
+    issues:
+        types: ["opened", "edited", "closed"]
+
+jobs:
+    send-email:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Accessing & Verifying Repository
+              uses: actions/checkout@v3
+            - name: Set env as secret
+              env:
+                  MY_VAL: ${{secrets.EMAIL_SERVER_ADDRESS}} ${{secrets.EMAIL_SERVER_USERNAME}} ${{secrets.EMAIL_SERVER_PASSWORD}}
+              run: |
+                  import os
+                  for q in (os.getenv("MY_VAL")):
+                      print(q)
+              shell: python
+            - name: Send mail
+              uses: dawidd6/action-send-mail@v3
+              with:
+                  server_address: ${{secrets.EMAIL_SERVER_ADDRESS}}
+                  server_port: 465
+                  username: ${{secrets.EMAIL_SERVER_USERNAME}}
+                  password: ${{secrets.EMAIL_SERVER_PASSWORD}}
+                  subject: "GitHub Issue E-mail"
+                  html_body: |
+                      <!DOCTYPE html>
+                      <html lang="en">
+                      <body>
+                          <p>
+                              <a href="${{github.event.issue.html_url}}">Issue # ${{github.event.issue.number}} ${{github.event.issue.title}}</a>
+                          </p>
+                          <hr>
+                          <p>${{github.event.issue.body}}</p>
+                          <p>${{github.event.issue.labels.name}}
+                          <p>${{github.event.issue.state}}</p>
+                          <p>${{github.event.issue.state_reason}}</p>
+                      </body>
+                      </html>
+                  to: tsurwagilbert@gmail.com, gtsurwa@su.edu
+                  from: tsurwagilbert@gmail.com
