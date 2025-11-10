@@ -1,6 +1,6 @@
 {
-    "name": "app",
-    "version": "1.0.2",
+    "name": "site",
+    "version": "1.0.0",
     "description": "Coming Soon",
     "main": "nuxt.config.ts",
     "private": true,
@@ -81,6 +81,33 @@
                         {
                             "type": "fix",
                             "section": "Bug Fixes (Site)"
+                        },
+                        {
+                            "type": "docs",
+                            "section": "Documentation"
+                        },
+                        {
+                            "type": "style",
+                            "section": "Code Style",
+                            "hidden": true
+                        },
+                        {
+                            "type": "refactor",
+                            "section": "Refactoring"
+                        },
+                        {
+                            "type": "perfomance",
+                            "section": "Performance Improvements"
+                        },
+                        {
+                            "type": "test",
+                            "section": "Tests",
+                            "hidden": true
+                        },
+                        {
+                            "type": "chore",
+                            "section": "Chores",
+                            "hidden": true
                         }
                     ]
                 }

@@ -1,7 +1,7 @@
 {
   "name": "studio",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.0.0",
   "main": "package.json",
   "license": "UNLICENSED",
   "scripts": {
@@ -71,6 +71,33 @@
             {
               "type": "fix",
               "section": "Bug Fixes (Studio)"
+            },
+            {
+              "type": "docs",
+              "section": "Documentation"
+            },
+            {
+              "type": "style",
+              "section": "Code Style",
+              "hidden": true
+            },
+            {
+              "type": "refactor",
+              "section": "Refactoring"
+            },
+            {
+              "type": "perfomance",
+              "section": "Performance Improvements"
+            },
+            {
+              "type": "test",
+              "section": "Tests",
+              "hidden": true
+            },
+            {
+              "type": "chore",
+              "section": "Chores",
+              "hidden": true
             }
           ]
         }
