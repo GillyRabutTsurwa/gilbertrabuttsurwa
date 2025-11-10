@@ -1,6 +1,6 @@
 {
     "name": "gilbertrabuttsurwa",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "my website project which containts my nuxt app and my sanity studio",
     "main": "index.js",
     "scripts": {
