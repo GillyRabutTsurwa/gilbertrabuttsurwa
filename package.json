@@ -7,7 +7,7 @@
         "dev": "npm-run-all --parallel dev:*",
         "dev:site": "npm run dev-https --workspace=site",
         "dev:studio": "npm run dev --workspace=content",
-        "release": "release-it"
+        "release": "dotenv release-it --"
     },
     "repository": {
         "type": "git",
@@ -32,6 +32,7 @@
     "devDependencies": {
         "@release-it/conventional-changelog": "^10.0.1",
         "@types/node": "^24.10.0",
+        "dotenv-cli": "^11.0.0",
         "npm-run-all": "^4.1.5",
         "release-it": "^19.0.6"
     },
