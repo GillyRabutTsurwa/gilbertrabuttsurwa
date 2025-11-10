@@ -1,5 +1,16 @@
 # Changelog
 
+## <small>1.0.2 (2025-11-10)</small>
+
+* actually defining the workspaces ([76d1a1b](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/76d1a1b))
+* modifying release commands ([acc9918](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/acc9918))
+* removing the workspace definitions ([264641d](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/264641d))
+* fix: actually testing; modifying files in both projects ([67cc7b2](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/67cc7b2))
+* fix: Let's See If This Works (release-it) Workflow ([a1a87e8](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/a1a87e8))
+* chore: release v1.0.1 ([af089ce](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/af089ce))
+* Fix: Forgot To Install Changelog Package Extension ([7af47b4](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/7af47b4))
+* Fix: Missing release-it commands ([162e0a2](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/162e0a2))
+
 ## <small>1.0.1 (2025-11-10)</small>
 
 * fix: Starting Over ([9709529](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/9709529))
