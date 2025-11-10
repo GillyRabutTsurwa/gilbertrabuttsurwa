@@ -38,7 +38,7 @@
     },
     "release-it": {
         "git": {
-            "commitMessage": "chore: release-site v${version}"
+            "commitMessage": "chore: release v${version}"
         },
         "github": {
             "release": true
@@ -54,11 +54,11 @@
                     "types": [
                         {
                             "type": "feat",
-                            "section": "Features (Site)"
+                            "section": "Features"
                         },
                         {
                             "type": "fix",
-                            "section": "Bug Fixes (Site)"
+                            "section": "Bug Fixes"
                         },
                         {
                             "type": "docs",
