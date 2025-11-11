@@ -1,5 +1,9 @@
 # Changelog
 
+## <small>1.0.3 (2025-11-11)</small>
+
+* fix: wrong hook name to update projects' versions ([fbd1626](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/fbd1626))
+
 ## <small>1.0.2 (2025-11-11)</small>
 
 * test: minour cleanup ([0850fde](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/0850fde))
