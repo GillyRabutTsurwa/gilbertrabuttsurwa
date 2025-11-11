@@ -1,5 +1,9 @@
 # Changelog
 
+## <small>1.0.2 (2025-11-11)</small>
+
+* test: minour cleanup ([0850fde](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/0850fde))
+
 ## <small>1.0.1 (2025-11-10)</small>
 
 * actually defining the workspaces ([76d1a1b](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/76d1a1b))
