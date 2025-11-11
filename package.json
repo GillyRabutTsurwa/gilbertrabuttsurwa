@@ -92,7 +92,7 @@
             }
         },
         "hooks": {
-            "after-bump": "tsx scripts/update-workspace-versions.ts"
+            "after:bump": "tsx scripts/update-workspace-versions.ts"
         }
     }
 }
