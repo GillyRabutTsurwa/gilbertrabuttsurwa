@@ -22,7 +22,6 @@
     "@sanity/nuxt-loader": "^1.7.21",
     "@sanity/vision": "^3.72.1",
     "@sanity/visual-editing": "^2.12.11",
-    "presentation": "^0.0.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-is": "^19.0.0",
