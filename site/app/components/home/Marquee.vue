@@ -4,10 +4,10 @@
 
 <template>
     <section class="marquee-container">
-        <h2>What I Use</h2>
+        <h2>Tools</h2>
         <h3>Front-End</h3>
         <ClientOnly>
-            <Vue3Marquee :duration="90" pauseOnHover>
+            <Vue3Marquee :duration="90" direction="reverse" pauseOnHover>
                 <i class="devicon-tailwindcss-plain"></i>
                 <i class="devicon-sass-plain"></i>
                 <i class="devicon-javascript-plain"></i>
@@ -22,7 +22,7 @@
                 <i class="devicon-jest-plain"></i>
             </Vue3Marquee>
             <h3>Back-End</h3>
-            <Vue3Marquee :duration="90" direction="reverse" pauseOnHover>
+            <Vue3Marquee :duration="90" pauseOnHover>
                 <i class="devicon-nodejs-plain"></i>
                 <i class="devicon-express-original"></i>
                 <i class="devicon-mongodb-plain"></i>
@@ -55,17 +55,26 @@
 
 <style lang="scss" scoped>
 .marquee-container {
-    width: 100%;
-    height: 100dvh;
-    overflow: hidden;
+    // width: 100%;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-rows: repeat(6, min-content);
+    grid-template-columns: subgrid;
+    padding: 4rem 0;
+    // overflow: hidden;
     background-color: $colour-secondary;
-    padding: 7rem 0;
+    color: $colour-primary;
+    // padding: 7rem 0;
+
+    & > * {
+      grid-column: 1 / -1;
+    }
 }
 
 :is(h2, h3) {
     // margin: 2rem 0;
     text-align: center;
-    color: $colour-primary;
+    // color: $colour-primary;
 }
 
 h2 {
@@ -76,9 +85,14 @@ h3 {
     font-size: 3rem;
 }
 
+h4 {
+    font-size: 12rem;
+    margin-inline: 10px
+}
+
 i {
     font-size: 15rem;
-    color: $colour-primary;
+    // color: $colour-primary;
 }
 
 .vue3-marquee {
