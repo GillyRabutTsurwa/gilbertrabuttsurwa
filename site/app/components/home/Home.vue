@@ -13,30 +13,16 @@ const { data: blogs } = await useSanityQuery<PostInt[]>(postQuery);
 
 <template>
     <HomeNav />
-    <section id="app">
-        <Header :content />
-        <Marquee />
-        <Showcase />
-        <Certifications :blogs />
-        <Form />
-        <Footer />
-    </section>
+    <Header :content />
+    <Marquee />
+    <Showcase />
+    <Certifications :blogs />
+    <Footer />
 </template>
 
 
 <style lang="scss" scoped>
-#app {
-    display: grid;
-    grid-template-areas: "Header" "First" "Second" "Third" "Fourth" "Fifth" "Footer";
-    grid-template-columns: 1fr;
-    font-family: "Kulim Park", Arial, Helvetica, sans-serif !important;
-    height: 100%;
-
-    &>*.landing {
-        height: inherit;
-    }
-}
-
+//NOTE: i might not need any of the code below
 .container {
     margin: 0 auto;
     min-height: 100vh;
