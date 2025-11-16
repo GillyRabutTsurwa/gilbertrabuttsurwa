@@ -59,6 +59,7 @@ returnRandomIndex();
 
 <style lang="scss" scoped>
 .loader {
+  grid-column: 1 / -1;
   position: relative;
   height: 100vh;
   display: -webkit-box;

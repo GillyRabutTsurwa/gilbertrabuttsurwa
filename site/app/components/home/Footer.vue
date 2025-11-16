@@ -93,7 +93,7 @@ const currentYear: ComputedRef<number> = computed(() => {
 
 <style lang="scss" scoped>
 .footer {
-  order: 7; //NOTE: can be a grid item
+  grid-column: 1 / -1;
   position: relative;
   width: 100%;
   // height: 60rem;

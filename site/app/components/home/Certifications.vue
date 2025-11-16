@@ -80,6 +80,7 @@ const capitalise: (argument: string) => string = (word: string): string => {
 
 <style lang="scss" scoped>
 .credentials {
+  grid-column: 1 / -1;
   padding: 6rem 0;
   color: $colour-primary;
 

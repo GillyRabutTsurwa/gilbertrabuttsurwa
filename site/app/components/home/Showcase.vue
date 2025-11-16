@@ -23,8 +23,9 @@ const changeComponent = (composant: string | ConcreteComponent) => currentCompon
 
 <style lang="scss" scoped>
 .skills {
+    grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    // grid-template-columns: subgrid;
     grid-template-rows: repeat(2, min-content) 1fr;
     background-color: $colour-primary;
     gap: 4rem;
@@ -39,14 +40,14 @@ const changeComponent = (composant: string | ConcreteComponent) => currentCompon
 
     &__main-title {
         grid-column: 1 / -1;
-        justify-self: center;
+        text-align: center;
         font-size: 3rem;
         color: $colour-secondary;
     }
 
     &__buttons {
         grid-column: 1 / -1;
-        grid-row: 2 / 3;
+        // grid-row: 2 / 3;
         justify-self: center;
 
         &--button {
@@ -57,7 +58,6 @@ const changeComponent = (composant: string | ConcreteComponent) => currentCompon
 }
 
 .all-projects {
-    justify-self: end;
-    transform: translateX(50%); // pour le centraliser
+    justify-self: center;
 }
 </style>
