@@ -116,6 +116,9 @@ export default defineNuxtConfig({
                 },
             },
         },
+        optimizeDeps: {
+            include: ["@nuxtjs/sanity"],
+        },
     },
     css: ["@/assets/sass/main.scss"],
     components: [
