@@ -15,7 +15,7 @@
   publish = "dist/"
 
   # Default build command.
-  command = "npm run build:site"
+  command = "npm install --workspace site && npm run build"
 
 [[plugins]]
   # Installs the Lighthouse Build Plugin for all deploy contexts
