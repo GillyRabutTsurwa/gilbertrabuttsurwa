@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](///compare/1.0.3...1.0.4) (2025-11-17)
+
+### Bug Fixes
+
+* addressed the breaking change for rendering portabletext in sanity 9f8b4c7
+* got rid of unused package accidentally installed 74c6f9c
+
 ## <small>1.0.3 (2025-11-11)</small>
 
 * fix: wrong hook name to update projects' versions ([fbd1626](https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/commit/fbd1626))
