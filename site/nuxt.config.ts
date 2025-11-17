@@ -102,7 +102,6 @@ export default defineNuxtConfig({
         css: {
             preprocessorOptions: {
                 scss: {
-                    api: "modern", // investigate this
                     additionalData: `
                   @use "@/assets/sass/abstracts/_extends.scss" as *; 
                   @use "@/assets/sass/abstracts/_functions.scss" as *;
