@@ -26,10 +26,6 @@
         "url": "https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa/issues"
     },
     "homepage": "https://github.com/GillyRabutTsurwa/gilbertrabuttsurwa#readme",
-    "workspaces": [
-        "content",
-        "site"
-    ],
     "devDependencies": {
         "@release-it/conventional-changelog": "^10.0.1",
         "@types/node": "^24.10.0",
