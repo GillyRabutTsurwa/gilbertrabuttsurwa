@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import fs from "fs";
 import path from "path";
 
@@ -12,7 +10,7 @@ if (!version) {
     process.exit(1);
 }
 
-const packages = ["site", "content"]; // your workspaces
+const packages = ["site", "content"];
 
 for (const pkg of packages) {
     const pkgPath = path.resolve(process.cwd(), pkg, "package.json");
