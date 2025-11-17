@@ -18,12 +18,18 @@ const CustomText = resolveComponent("CustomText");
 const CustomLink = resolveComponent("CustomLink");
 const CustomCode = resolveComponent("CustomCode");
 const CustomImage = resolveComponent("CustomImage");
-const serializers = {
+const CustomBlockQuote = resolveComponent("CustomBlockQuote");
+const components = {
   types: {
     text: CustomText,
-    link: CustomLink,
     code: CustomCode,
-    image: CustomImage
+    image: CustomImage,
+  },
+  marks: {
+    link: CustomLink
+  },
+  block: {
+    blockquote: CustomBlockQuote
   }
 }
 </script>
@@ -55,7 +61,7 @@ const serializers = {
       </ul>
       <div class="blog-content__description">
         <p>{{ props.post.excerpt }}</p>
-        <SanityContent :blocks="props.post.body" :serializers="serializers" />
+        <SanityContent :value="props.post.body" :components="components" />
       </div>
       <Button isLink path="/blog/personal" text="All Posts" colourPrimary="#101d2c" colourSecondary="#e6b376" />
     </div>
