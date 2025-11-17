@@ -7,6 +7,7 @@
         "dev": "npm-run-all --parallel dev:*",
         "dev:site": "npm run dev-https --workspace=site",
         "dev:studio": "npm run dev --workspace=content",
+        "build:site": "npm run build --workspace=site",
         "release": "dotenv release-it --"
     },
     "repository": {
