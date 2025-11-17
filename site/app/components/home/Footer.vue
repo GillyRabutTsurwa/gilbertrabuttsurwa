@@ -23,8 +23,8 @@ const currentYear: ComputedRef<number> = computed(() => {
     <ul class="links-footer__contact">
       <h4 class="links-footer__subtitle">Contact Me</h4>
       <li class="links-footer--item phone">
-        <NuxtLink to="tel:+5408002584" external>
-          <span>540-800-2584</span>
+        <NuxtLink to="tel:+6695007730" external>
+          <span>669-500-7730</span>
         </NuxtLink>
       </li>
       <li class="links-footer--item email">
