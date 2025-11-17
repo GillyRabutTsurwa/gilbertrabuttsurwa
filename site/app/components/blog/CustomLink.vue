@@ -1,7 +1,10 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const props = defineProps(["value"]);
+console.log(props);
+</script>
 
 <template function>
-    <a target="_blank" rel="noopener noreferrer">
+    <a :href="props.value.href" target="_blank" rel="noopener noreferrer">
         <slot />
     </a>
 </template>
@@ -11,6 +14,7 @@ a,
 a:link,
 a:visited {
     color: $colour-primary;
+    font-style: italic;
     text-decoration: none;
 }
 </style>

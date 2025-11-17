@@ -1,32 +1,21 @@
 <script setup>
 import hljs from "highlight.js";
-// import "../node_modules/highlight.js/styles/night-owl.css";
-// import "~~/node_modules/highlight.js/styles/base16/atelier-seaside.css";
-import "../../../node_modules/highlight.js/styles/base16/atelier-seaside.css"
+import "~~/node_modules/highlight.js/styles/base16/atelier-seaside.css";
 
-
-const props = defineProps({
-    code: {
-        type: String, //NOTE: oops, forgot to revert it to String
-        // required: true,
-    },
-    language: {
-        type: String
-    },
-    filename: {
-        type: String
-    }
-});
-const code = ref(null); //this will be parsed code
+const props = defineProps(["value", "index"]);
 
 onMounted(() => {
     hljs.highlightAll();
+    console.log(props);
+    console.log(props.value.language);
+    console.log(props.value.code);
+    console.log(props.index);
 })
 </script>
 
 <template>
     <pre>
-        <code :class="`language-${props.language}`" :data-language="props.language">{{ props.code }}</code>
+        <code :class="`language-${props.value.language}`" :data-language="props.value.language">{{ props.value.code }}</code>
     </pre>
 </template>
   

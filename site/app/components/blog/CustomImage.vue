@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import { SanityImage } from '#components';
 
-const props = defineProps({
-    asset: Object
-});
+const props = defineProps(["value"]);
+console.log(props);
 </script>
 
 <template function>
     <figure>
-        <SanityImage :asset-id="props.asset._ref" auto="format"/>
+        <SanityImage :asset-id="props.value.asset._ref" auto="format"/>
     </figure>
 </template>
 
