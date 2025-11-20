@@ -23,20 +23,21 @@ const toggleElement = () => {
 }
 
 const CustomText = resolveComponent("CustomText");
-const serializers = {
-    types: {
-        text: CustomText
-    }
+const CustomLink = resolveComponent("CustomLink");
+const components = {
+  types: {
+    text: CustomText,
+  },
+  marks: {
+    link: CustomLink
+  }
 }
 
 const { showElement, toggleElementOnResize } = useBreakpoints();
 if (process.client) window.addEventListener("resize", () => (toggleElementOnResize(480)));
 onMounted(() => {
     if (process.client) toggleElementOnResize(480);
-})
-
-
-
+});
 </script>
         
 <template>
@@ -44,9 +45,10 @@ onMounted(() => {
         <div class="authour__content">
             <h4 class="authour__content--title">{{ name }}</h4>
             <div class="authour__content--text">
-                <SanityContent :blocks="bio" :serializers="serializers" />
+                <SanityContent :value="bio" :components="components" />
             </div>
-            <button @click="toggleElement" class="button-secondary">Toggle</button>
+            <Button @click="toggleElement" text="Toggle" colourPrimary="#101d2c" colourSecondary="#e6b376" />
+            <Button isLink path="/blog" text="Read My Blogs" colourPrimary="#101d2c" colourSecondary="#e6b376" />
         </div>
         <div class="authour__assets" v-if="!showElement">
             <figure class="authour__img" v-if="randomNumber % 2 === 0">
