@@ -15,5 +15,5 @@ dist
 localhost-key.pem
 localhost.pem
 sanity.groq
-server/plugins/sanity.ts
+server/plugins/sanity.[dev].ts
 package-lock.json
