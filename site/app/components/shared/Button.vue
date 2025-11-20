@@ -20,11 +20,13 @@ const props = defineProps({
   },
   colourPrimary: {
     type: String,
-    required: false
+    required: false,
+    default: "#e6b376"
   },
   colourSecondary: {
     type: String,
-    required: false
+    required: false,
+    default: "#101d2c"
   },
 });
 

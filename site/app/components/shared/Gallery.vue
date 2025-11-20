@@ -48,8 +48,7 @@ const site_url = config.public.client_url;
 
 <style lang="scss" scoped>
 .showcase {
-  width: 100%;
-  height: 100%;
+  grid-column: 1/-1;
   background-color: $colour-primary;
   color: $colour-secondary;
   padding: 0 3rem;
