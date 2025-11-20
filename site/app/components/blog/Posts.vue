@@ -29,7 +29,7 @@ const getSnippet = (text: string, limit: number = 300) => text.slice(0, limit) +
                     <p>{{ getSnippet(currentPost.excerpt) }}</p>
                 </div>
                 <Button isLink :path="`/blog/personal/${currentPost.slug.current}`"
-                    :colourPrimary="currentPost.colourPrimary.hex" :colourSecondary="currentPost.colourSecondary.hex" />
+                    :colourPrimary="currentPost.colourPrimary?.hex" :colourSecondary="currentPost.colourSecondary?.hex" />
             </div>
         </div>
     </section>
