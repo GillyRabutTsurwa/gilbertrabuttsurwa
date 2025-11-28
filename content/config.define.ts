@@ -14,7 +14,7 @@ export const dataset = process.env.SANITY_STUDIO_DATASET!;
 export const settings = (envName: string, envID: string = "g014cs9v", envTheme: any, envIcon: IconComponent) => {
   return {
     name: envName,
-    title: envName.charAt(0).toUpperCase().slice(1), //NOTE: this will capitalise the ting
+    title: envName.charAt(0).toUpperCase().slice(1),
     projectId: envID,
     dataset: envName,
     basePath: `/${envName}`,

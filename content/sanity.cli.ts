@@ -3,8 +3,11 @@ import { projectId, dataset } from "./config.define";
 
 export default defineCliConfig({
   api: {
-    projectId: "g014cs9v",
-    dataset: "production",
+    projectId: process.env.SANITY_STUDIO_PROJECT_ID,
+    dataset: process.env.SANITY_STUDIO_DATASET,
   },
   studioHost: "gilbertrabuttsurwa",
+  deployment: {
+    appId: process.env.SANITY_STUDIO_APP_ID,
+  },
 });
