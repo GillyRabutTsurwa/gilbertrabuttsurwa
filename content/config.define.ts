@@ -4,6 +4,7 @@ import { presentationTool } from "sanity/presentation";
 import { EditIcon, DesktopIcon, UserIcon, type IconComponent } from "@sanity/icons";
 import { codeInput } from "@sanity/code-input";
 import { colorInput } from "@sanity/color-input";
+import { media } from "sanity-plugin-media";
 import { schemaTypes } from "./schemas";
 import Logo from "./components/Logo";
 import "./custom.css";
@@ -61,6 +62,7 @@ export const settings = (envName: string, envID: string = "g014cs9v", envTheme: 
           },
         },
       }),
+      media(),
     ],
     icon: envIcon,
 
