@@ -5,7 +5,7 @@
 //     watchEffect(async () => {
 //         if (!user.value && ) await navigateTo("/projects");
 //     });
-// })
+// });
 </script>
 
 <template>
