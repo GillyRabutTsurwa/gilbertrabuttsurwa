@@ -1,10 +1,12 @@
 import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
+import { dashboardTool } from "@sanity/dashboard";
 import { presentationTool } from "sanity/presentation";
 import { EditIcon, DesktopIcon, UserIcon, type IconComponent } from "@sanity/icons";
 import { codeInput } from "@sanity/code-input";
 import { colorInput } from "@sanity/color-input";
 import { media } from "sanity-plugin-media";
+import { netlifyWidget } from "sanity-plugin-dashboard-widget-netlify";
 import { schemaTypes } from "./schemas";
 import Logo from "./components/Logo";
 import "./custom.css";
@@ -21,6 +23,23 @@ export const settings = (envName: string, envID: string = "g014cs9v", envTheme: 
     basePath: `/${envName}`,
 
     plugins: [
+      dashboardTool({
+        widgets: [
+          netlifyWidget({
+            title: "Netlify Deploys",
+            sites: [
+              {
+                title: "gilbertrabuttsurwa",
+                apiId: "167eb826-c028-4b19-b0f3-888d57c5e1cb",
+                buildHookId: "692a0f6a5e97e0284483da67",
+                name: "rabuttsurwa",
+                branch: "master",
+                url: "https://gilbertrabuttsurwa.com",
+              },
+            ],
+          }),
+        ],
+      }),
       structureTool({
         structure: (S) => {
           return S.list()
