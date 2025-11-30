@@ -3,6 +3,7 @@ import { posts } from "~~/queries";
 import type { PostInt } from "~~/interfaces/post";
 import type { StateTree, Store } from "pinia";
 import { usePostsStore } from '@/stores/posts';
+import { useRoute } from "vue-router";
 
 interface Page {
     currentPage: number;
@@ -10,19 +11,21 @@ interface Page {
 }
 
 // VARIABLES
-const query: string = posts("personal");
-const flexDir: Ref<string> = ref("");
+const route = useRoute();
+const genre = route.params.genre;
+const query: string = posts(genre);
 const state: Page = reactive({
     currentPage: 1,
-    postsPerPage: 8
+    postsPerPage: 5
 });
 
 // COMPOSABLES
 const store: Store<"posts", StateTree> = usePostsStore();
-// const { data: blogs } = await useFetch("/api/blogs/personal") || await useSanityQuery<PostInt>(query);
 const { data: blogs } = await useSanityQuery<PostInt>(query);
 
-
+const renderPagination = (eventPayload: number) => {
+    state.currentPage = eventPayload;
+}
 
 // COMPUTED VALUES
 const indexOfLastPost: ComputedRef<number> = computed(() => {
@@ -37,30 +40,12 @@ const currentPosts = computed(() => {
     return store.filteredPosts.slice(indexOfFirstPost.value, indexOfLastPost.value);
 });
 
+const featuredPost = computed(() => {
+    return store.posts[Math.floor(Math.random() * (store.posts.length))];
+});
 
-// FUNCTIONS
-function renderPagination(eventPayload: number) {
-    state.currentPage = eventPayload;
-}
-
-
-console.log(blogs.value);
-
-
-// CODE TO RUN ON COMPONENT CREATION
 store.posts = blogs.value;
 store.filteredPosts = blogs.value;
-
-// allPosts.value?.forEach
-
-
-// LIFECYCLE HOOKS
-onMounted(() => {
-    if (process.client) {
-        const mediaQueryList = window.matchMedia("(max-width: 1023px)");
-        flexDir.value = mediaQueryList.matches ? "column" : "row";
-    }
-});
 </script>
 
 <template>
@@ -88,10 +73,10 @@ onMounted(() => {
             </li>
         </template>
     </Navigation>
-    <BlogHeader />
+    <BlogHeader :post="featuredPost"/>
     <FlexContainer layout="row-reverse">
         <Categories :posts="store.posts" />
-        <Posts type="personal" :posts="currentPosts" />
+        <Posts :posts="currentPosts" />
     </FlexContainer>
     <Pagination :postsPerPage="state.postsPerPage" :postsLength="store.filteredPosts.length"
         @paginate="renderPagination($event)" />

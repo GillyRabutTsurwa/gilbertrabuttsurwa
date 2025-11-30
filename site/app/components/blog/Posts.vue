@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import type { PostInt } from "~~/interfaces/post";
 const props = defineProps({
-    type: {
-        type: String,
-        required: false
-    },
     posts: {
         type: Array<PostInt>,
         required: true
@@ -17,7 +13,7 @@ const getSnippet = (text: string, limit: number = 300) => text.slice(0, limit) +
 </script>
 
 <template>
-    <section v-if="type === 'personal'" class="blogs-personal">
+    <section class="blogs-personal">
         <div v-for="currentPost in props.posts" :key="currentPost._id" class="blogs-personal__item">
             <figure class="blogs-personal__item--picture">
                 <SanityImage :asset-id="currentPost.thumbnail?.asset?._ref" auto="format" />
@@ -30,20 +26,6 @@ const getSnippet = (text: string, limit: number = 300) => text.slice(0, limit) +
                 </div>
                 <Button isLink :path="`/blog/personal/${currentPost.slug.current}`"
                     :colourPrimary="currentPost.colourPrimary?.hex" :colourSecondary="currentPost.colourSecondary?.hex" />
-            </div>
-        </div>
-    </section>
-    <section v-else-if="type === 'tech'" class="blogs-tech">
-        <div v-for="currentPost in props.posts" :key="currentPost._id" class="blogs-tech__item">
-            <figure class="blogs-tech__item--picture">
-                <SanityImage :asset-id="currentPost.thumbnail.asset._ref" auto="format" />
-            </figure>
-            <div class="blogs-tech__item--content">
-                <h3 class="title">{{ currentPost.title }}</h3>
-                <h5 class="published">{{ formatDate(currentPost.publishedAt) }}</h5>
-                <p class="snippet">{{ getSnippet(currentPost.excerpt) }}</p>
-                <Button isLink :path="`/blog/tech/${currentPost.slug.current}`" colourPrimary="#104f55"
-                    colourSecondary="#f0f0f0" />
             </div>
         </div>
     </section>
