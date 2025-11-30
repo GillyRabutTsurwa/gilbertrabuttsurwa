@@ -1,36 +1,29 @@
 <script setup lang="ts">
-import { posts } from '~~/queries';
-import type { PostInt } from '~~/interfaces/post';
-const query = posts("personal");
-const { data, pending, error } = await useSanityQuery<PostInt>(query);
+import type { PostInt } from "~~/interfaces/post";
 
-const randomPost: ComputedRef<PostInt> = computed(() => {
-  return data.value[Math.floor(Math.random() * (data.value.length))];
+const {post} = defineProps({
+    post: {
+        type: Object as PropType<PostInt>,
+        required: true
+    }
 });
-
-pending.value = true;
-
-setTimeout(() => {
-  pending.value = false;
-}, 3000);
 </script>
 
 <template>
-  <Spinner v-if="pending" :dimensions="150" />
-  <header v-else class="header">
+  <header class="header">
     <div class="header__blog-intro">
       <h2>Featured Post</h2>
     </div>
     <div class="header__post">
       <div class="header__post--content">
-        <h2 class="title">{{ randomPost.title }}</h2>
-        <p class="text">{{ randomPost.excerpt }}</p>
-        <Button isLink :path="`/blog/personal/${randomPost.slug.current}`" colourPrimary="#101d2c"
+        <h2 class="title">{{ post.title }}</h2>
+        <p class="text">{{ post.excerpt }}</p>
+        <Button isLink :path="`/blog/personal/${post.slug.current}`" colourPrimary="#101d2c"
           colourSecondary="#e6b376" />
       </div>
     </div>
     <figure class="header__post--img">
-      <SanityImage :asset-id="randomPost.thumbnail?.asset?._ref" auto="format" />
+      <SanityImage :asset-id="post.thumbnail?.asset?._ref" auto="format" />
     </figure>
   </header>
 </template>
