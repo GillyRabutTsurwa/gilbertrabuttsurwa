@@ -27,6 +27,7 @@ function paginatePg(pageNum: number) {
 
 onMounted(() => {
   //@todo: Refactor this Code
+  if (!pagination.value) return;
   pagination.value.addEventListener("mouseover", (e) => {
     if (e.target.tagName === "BUTTON") {
       e.target.style.backgroundColor = "#e6b376";
