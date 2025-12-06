@@ -12,12 +12,10 @@ const { data: blogs } = await useSanityQuery<PostInt[]>(postQuery);
 </script>
 
 <template>
-    <HomeNav />
     <Header :content />
     <Marquee />
     <Showcase />
     <Certifications :blogs />
-    <Footer />
 </template>
 
 
