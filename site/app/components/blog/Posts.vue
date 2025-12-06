@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { PostInt } from "~~/interfaces/post";
-const props = defineProps({
+const { posts } = defineProps({
     posts: {
         type: Array<PostInt>,
         required: true
@@ -14,7 +14,7 @@ const getSnippet = (text: string, limit: number = 300) => text.slice(0, limit) +
 
 <template>
     <section class="blogs-personal">
-        <div v-for="currentPost in props.posts" :key="currentPost._id" class="blogs-personal__item">
+        <div v-for="currentPost in posts" :key="currentPost._id" class="blogs-personal__item">
             <figure class="blogs-personal__item--picture">
                 <SanityImage :asset-id="currentPost.thumbnail?.asset?._ref" auto="format" />
             </figure>
@@ -32,7 +32,6 @@ const getSnippet = (text: string, limit: number = 300) => text.slice(0, limit) +
 </template>
 
 <style lang="scss" scoped>
-// ===================== Personal Blog Styles ==========================
 .blogs-personal {
     flex: 1 0 75%;
     display: grid;
@@ -169,54 +168,6 @@ const getSnippet = (text: string, limit: number = 300) => text.slice(0, limit) +
             a {
                 margin: 2rem auto 0 auto;
             }
-        }
-    }
-}
-
-// ===================== Tech Blog Styles ==========================
-.blogs-tech {
-    margin: 3rem 0;
-    padding: 5rem;
-
-    display: grid;
-    grid-template-columns: repeat(2, 55rem);
-    grid-template-rows: repeat(2, -webkit-min-content);
-    grid-template-rows: repeat(2, min-content);
-    -moz-gap: 7rem;
-    gap: 7rem;
-
-    @include breakpoint(1023) {
-        grid-template-columns: 1fr;
-        width: 80%;
-        margin: 0 auto;
-    }
-
-    &__item {
-        // height: 90rem; //TESTING
-
-        &--picture {
-            height: 50rem;
-
-            img {
-                width: 100%;
-                height: 100%;
-                -o-object-fit: cover;
-                object-fit: cover;
-            }
-        }
-
-        &--content {
-            .title {
-                font-size: 3rem;
-                margin-top: 3rem;
-            }
-
-            .published {
-                margin-bottom: 1.5rem;
-                font-weight: 500;
-            }
-
-            .snippet {}
         }
     }
 }
