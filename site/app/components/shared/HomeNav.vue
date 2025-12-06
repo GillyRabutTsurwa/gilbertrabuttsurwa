@@ -1,5 +1,19 @@
+<script setup lang="ts">
+const route = useRoute();
+const route_name = route.name as string;
+const isLoaderFinished: Ref<boolean> = ref(false);
+
+onMounted(() => {
+  if (route_name === "index") {
+    setTimeout(() => { 
+      isLoaderFinished.value = true;
+     }, 3000);
+  } 
+});
+</script>
+
 <template>
-  <div class="home-navigation">
+  <div v-if="isLoaderFinished" class="home-navigation">
     <input type="checkbox" name="navigo" class="home-navigation__checkbox" id="navi-toggle">
     <label for="navi-toggle" class="home-navigation__button">
       <span class="home-navigation__icon">&nbsp;</span>
@@ -34,6 +48,7 @@
 <style lang="scss" scoped>
 .home-navigation {
   z-index: 100000;
+  font-family: "Kulim Park", Arial, Helvetica, sans-serif !important;
 
   &__checkbox {
     // Hide actual checkbox
@@ -49,8 +64,8 @@
     right: 3rem;
     border-radius: 50%;
     z-index: 20000;
-    -webkit-box-shadow: 0 1rem 3rem rgba($colour-noir, 0.1);
-    box-shadow: 0 1rem 3rem rgba($colour-noir, 0.1);
+    -webkit-box-shadow: 0 1rem 3rem rgba(#000, 0.1);
+    box-shadow: 0 1rem 3rem rgba(#000, 0.1);
     text-align: center;
     cursor: pointer;
 
@@ -169,7 +184,7 @@
       display: inline-block;
       width: 3rem;
       height: 2px;
-      background-color: $colour-gris-supersombre;
+      background-color: $grey-sombre;
     }
 
     &::before,

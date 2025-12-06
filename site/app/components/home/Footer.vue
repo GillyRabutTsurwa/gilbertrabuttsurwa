@@ -1,11 +1,23 @@
 <script setup lang="ts">
+const route = useRoute();
+const route_name = route.name as string;
+const isLoaderFinished: Ref<boolean> = ref(false);
+
 const currentYear: ComputedRef<number> = computed(() => {
   return new Date().getFullYear();
+});
+
+onMounted(() => {
+  if (route_name === "index") {
+    setTimeout(() => {
+      isLoaderFinished.value = true;
+     }, 3500);
+  }
 });
 </script>
 
 <template>
-  <footer class="footer dark">
+  <footer v-if="isLoaderFinished" class="footer dark">
     <ul class="links-footer__other-sites">
       <h4 class="links-footer__subtitle">Other Sites</h4>
       <li class="links-footer--item phone">
@@ -81,12 +93,6 @@ const currentYear: ComputedRef<number> = computed(() => {
       </li>
     </ul>
     <h3 class="copyright">Copyright &copy; Gilbert Rabut Tsurwa {{ currentYear }}. All Rights Reserved</h3>
-    <!-- <div class="below-footer">
-            <p>Powered via <img src="~/assets/svg/nuxt-logo.svg" alt="" class="nuxt"> &
-                <img src="~/assets/svg/sanity-logo.svg" alt="" class="sanity" /> &#124; <span class="hosted-on">Hosted
-                    on</span> <img src="~/assets/svg/netlify-logo.svg" alt="" class="netlify" />
-            </p>
-        </div> -->
   </footer>
 </template>
 
@@ -96,22 +102,18 @@ const currentYear: ComputedRef<number> = computed(() => {
   grid-column: 1 / -1;
   position: relative;
   width: 100%;
-  // height: 60rem;
-  // height: 45rem;
   padding: 20rem 10rem;
-  // padding: 0 4rem;
 
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  // grid-template-rows: repeat(2, 1fr) 10rem;
   grid-template-rows: 1fr 10rem;
 
   place-items: center;
-  // align-content: center;
   row-gap: 2.5rem;
-  // background-color: #104f55;
   background-color: $colour-primary;
   color: $colour-secondary;
+
+  font-family: "Kulim Park", Arial, Helvetica, sans-serif !important;
 
   @include breakpoint(480) {
     display: flex;
@@ -123,13 +125,12 @@ const currentYear: ComputedRef<number> = computed(() => {
   }
 
   .logo {
-    // width: 15rem;
     width: 20rem;
     height: 20rem;
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    justify-self: end; // mais il (le logo) est toujours hors de centre
-    position: relative; //NOTE: voici la solution
+    justify-self: end;
+    position: relative;
     left: 20%;
 
     background-color: transparent;
@@ -152,7 +153,6 @@ const currentYear: ComputedRef<number> = computed(() => {
     &__socials {
       grid-row: 2 / 3;
       text-align: center;
-      // align-self: center;
 
       a {
         &,
@@ -161,12 +161,11 @@ const currentYear: ComputedRef<number> = computed(() => {
           color: unset;
           text-decoration: none;
           transition: all 0.2s;
-          display: inline-block; //NOTE: sans celui-ci, la rotation n'est pas possible
+          display: inline-block;
         }
 
         &:hover,
         &:active {
-          // color: $colour-primary;
           color: $colour-secondary;
           -webkit-box-shadow: 0 1rem 2rem rgb(0 0 0 / 40%);
           box-shadow: 0 1rem 2rem rgb(0 0 0 / 40%);
