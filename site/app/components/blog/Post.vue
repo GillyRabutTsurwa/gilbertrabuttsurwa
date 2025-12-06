@@ -69,8 +69,9 @@ const components = {
 
 <style lang="scss">
 .blog-container {
+  grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: subgrid;
   column-gap: 2rem;
   height: 100vh;
   overflow: hidden;
@@ -87,6 +88,7 @@ const components = {
   }
 
   .blog-img-container {
+    grid-column: 1 / 7;
     position: sticky;
     top: 0;
     height: 100vh;
@@ -107,7 +109,7 @@ const components = {
   }
 
   .blog-content {
-    position: relative;
+    grid-column: 7 / -1;
     padding: 4rem 3rem 6rem 3rem;
     overflow: hidden auto;
     height: 100vh;
