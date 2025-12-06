@@ -16,7 +16,7 @@ const query = groq`*[_type == "homeGrid"] {
     gridImages
 }`;
 const { data } = await useSanityQuery(query);
-const imageData = data.value[0]; //NOTE: il n'y qu'un seul truc (objet) dans le tableau
+const imageData = data.value[0];
 
 const images = imageData.gridImages.map((currentImage) => {
   return {
@@ -29,7 +29,7 @@ const myClasses = ["personal", "tech"];
 
 <style lang="scss">
 .container {
-  width: 100%;
+  grid-column: 1 / -1;
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(2, calc(100% / 2));
