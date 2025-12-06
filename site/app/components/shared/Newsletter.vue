@@ -3,13 +3,12 @@
 <template>
   <div class="newsletter-container">
     <h4 class="newsletter__title">NewsLetter</h4>
-    <p>If you would like to stay updated with my blog, or simply show some support, consider subscribing to my newsletter.
-    </p>
+    <p>Subscribe to my newsletter if you'd like to support.</p>
     <form action="" class="newsletter__form">
       <input type="text" name="" placeholder="Name">
       <input type="email" name="" id="" placeholder="E-mail">
-      <textarea name="" id="" cols="30" rows="10" placeholder="Leave me a nice message (Optional)"></textarea>
-      <Button text="Subscribe" colourPrimary="#104f55" colourSecondary="#f0f0f0" />
+      <textarea name="" id="" cols="30" rows="5" placeholder="Leave a message (Optional)"></textarea>
+      <Button text="Subscribe" colourPrimary="#101d2c" colourSecondary="#e6b376" />
     </form>
   </div>
 </template>
@@ -17,7 +16,7 @@
 <style lang="scss" scoped>
 .newsletter-container {
   width: 80%;
-  margin: 4rem auto 0 auto;
+  margin: 1.5rem auto 0 auto;
 
   h4 {
     text-align: center;
