@@ -1,5 +1,7 @@
 .env
 package-lock.json
+CHANGELOG.md
 
-node_modules
 .netlify
+.vscode
+node_modules
