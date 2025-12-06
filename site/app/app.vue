@@ -1,6 +1,18 @@
 <script setup lang="ts">
+import type { LayoutKey } from '#build/types/layouts';
+
 const route = useRoute();
-const layout: ComputedRef<string> = computed(() => route.name.includes("blog") ? "blog" : "default");
+const layoutMap: Record<string, LayoutKey> = {
+  "index": "home",
+  "blog-genre": "blog",
+  "blog-article": 'blog',
+  "shop": "shop"
+};
+
+const layout: ComputedRef<LayoutKey> = computed(() => {
+  const route_name = route.name as string;
+  return layoutMap[route_name] || "default";
+});
 </script>
 
 <template>
