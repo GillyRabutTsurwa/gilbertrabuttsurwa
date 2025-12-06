@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { PostInt } from "~~/interfaces/post";
 
-const {post} = defineProps({
+const { post } = defineProps({
     post: {
-        type: Object as PropType<PostInt>,
-        required: true
+      type: Object as PropType<PostInt>,
+      required: true
     }
 });
 </script>
