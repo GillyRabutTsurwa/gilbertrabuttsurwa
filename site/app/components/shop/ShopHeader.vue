@@ -1,9 +1,5 @@
 <template>
     <header class="hero">
-        <!-- <div class="banner">
-        <h1 class="banner-title">furniture collection</h1>
-        <button class="banner-btn">shop now</button>
-      </div> -->
         <div class="hero__images">
             <!-- NOTE: using test images -->
             <figure class="hero__images--image">
@@ -28,7 +24,7 @@
   
 <style lang="scss" scoped>
 .hero {
-    width: 100%;
+    grid-column: 1 / -1;
 }
 
 .hero__images {

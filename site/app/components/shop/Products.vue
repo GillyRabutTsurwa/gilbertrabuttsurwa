@@ -20,6 +20,7 @@ store.products = products.value;
 
 <style scoped>
 .products {
+  grid-column: 1 / -1;
   padding: 4rem 0;
 }
 
